@@ -2,7 +2,11 @@ package model;
 
 import java.util.ArrayList;
 
+import view.LinhaProducaoWindow;
+
 public class FabricaDrone extends Thread{
+	
+	private static FabricaDrone fabricaDrone;
 	
 	private ArrayList<ParteDrone> estoqueHelices;
 	private ArrayList<ParteDrone> estoqueBaterias;
@@ -41,36 +45,38 @@ public class FabricaDrone extends Thread{
 		arrayLinhaProducao.add(linhaProducaoFrame);
 		
 		this.montadoraDrone = new MontadoraDrone(estoqueHelices, estoqueBaterias, estoquePlacasControladoras, estoqueMotores, estoqueFrames);
+		
+		this.start();
 	}
 	
 	public void run() {
 
 		while (true) {
 			
-			for(LinhaProducao linhaProducao : arrayLinhaProducao ) {
-				if (linhaProducao.getEstoqueParteDrone().size() == 0) {
-					synchronized (linhaProducao) {
-						System.out.println("************************* Incializa Produção *************************");
-						linhaProducao.notify();
-					}
-				}
-			}
-			
-			
-
 			if (estoqueHelices.size()>=4 && estoqueBaterias.size()>=2 && estoquePlacasControladoras.size()>=1 && estoqueMotores.size()>=4 && estoqueFrames.size()>=1) {
 				synchronized (montadoraDrone) {
 					System.out.println("************************* Incializa Consumo *************************");
 					montadoraDrone.notify();
 				}
 			}
+			
+			for(LinhaProducao linhaProducao : arrayLinhaProducao ) {
+				if (linhaProducao.getEstoqueParteDrone().size() == 0) {
+					synchronized (linhaProducao) {
+						System.out.println("************************* Incializa Produção de "+linhaProducao.getNome()+" *************************");
+						linhaProducao.notify();
+					}
+				}
+			}
+			
 		}
 	}
 	
-	
-	public static void main(String[] args) {
-		FabricaDrone dji = new FabricaDrone();
-		dji.start();
+	public static FabricaDrone getFabricaDrone(){
+		if(fabricaDrone == null) { 
+			fabricaDrone = new FabricaDrone();
+		}
+		return fabricaDrone;
 	}
 
 }

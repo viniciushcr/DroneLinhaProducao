@@ -2,6 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
+import view.LinhaProducaoWindow;
+
 public class LinhaProducao implements Runnable{
 	
 	private String nomeParte;
@@ -25,13 +27,14 @@ public class LinhaProducao implements Runnable{
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				while (estoqueParteDrone.size() >= 0 && estoqueParteDrone.size() <= (tamanhoEstoque-1)) {
+				while (estoqueParteDrone.size() <= (tamanhoEstoque-1)) {
 					try {
 						Thread.sleep(tempoPruducao);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 					estoqueParteDrone.add(new ParteDrone(nomeParte));
+					LinhaProducaoWindow.getLinhaProducaoWindow().getTextPorNome(nomeParte).setText(""+estoqueParteDrone.size());
 					System.out.println("Produziu -> "+estoqueParteDrone.size()+" " + nomeParte);
 				}
 			}
@@ -40,6 +43,10 @@ public class LinhaProducao implements Runnable{
 
 	public ArrayList<ParteDrone> getEstoqueParteDrone() {
 		return estoqueParteDrone;
+	}
+	
+	public String getNome() {
+		return nomeParte;
 	}
 		
 

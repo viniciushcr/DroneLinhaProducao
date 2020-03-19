@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import model.FabricaDrone;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -58,7 +61,10 @@ public class MenuWindow extends JFrame {
 		JButton btnStart = new JButton("START");
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 				LinhaProducaoWindow.getLinhaProducaoWindow().setVisible(true);
+				FabricaDrone.getFabricaDrone();
+
 			}
 		});
 		btnStart.setFont(new Font("Arial", Font.PLAIN, 30));

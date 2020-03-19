@@ -51,7 +51,7 @@ public class LinhaProducaoWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public LinhaProducaoWindow() {
+	private LinhaProducaoWindow() {
 		setType(Type.UTILITY);
 		setTitle("Dados Linha Produ\u00E7\u00E3o");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -93,45 +93,57 @@ public class LinhaProducaoWindow extends JFrame {
 		contentPane.add(lblDroneCompleto);
 		
 		textHelice = new JTextField();
+		textHelice.setText("0");
+		textHelice.setFont(new Font("Arial", Font.PLAIN, 50));
 		textHelice.setBackground(Color.RED);
 		textHelice.setEditable(false);
-		textHelice.setBounds(20, 248, 70, 70);
+		textHelice.setBounds(30, 248, 60, 70);
 		contentPane.add(textHelice);
 		textHelice.setColumns(10);
 		
 		textBateria = new JTextField();
+		textBateria.setText("0");
+		textBateria.setFont(new Font("Arial", Font.PLAIN, 50));
 		textBateria.setBackground(Color.RED);
 		textBateria.setEditable(false);
 		textBateria.setColumns(10);
-		textBateria.setBounds(255, 248, 70, 70);
+		textBateria.setBounds(255, 248, 60, 70);
 		contentPane.add(textBateria);
 		
 		textFrame = new JTextField();
+		textFrame.setText("0");
+		textFrame.setFont(new Font("Arial", Font.PLAIN, 50));
 		textFrame.setBackground(Color.RED);
 		textFrame.setEditable(false);
 		textFrame.setColumns(10);
-		textFrame.setBounds(492, 248, 70, 70);
+		textFrame.setBounds(492, 248, 60, 70);
 		contentPane.add(textFrame);
 		
 		textPlacaControladora = new JTextField();
+		textPlacaControladora.setText("0");
+		textPlacaControladora.setFont(new Font("Arial", Font.PLAIN, 50));
 		textPlacaControladora.setBackground(Color.RED);
 		textPlacaControladora.setEditable(false);
 		textPlacaControladora.setColumns(10);
-		textPlacaControladora.setBounds(20, 588, 70, 70);
+		textPlacaControladora.setBounds(20, 588, 60, 70);
 		contentPane.add(textPlacaControladora);
 		
 		textMotor = new JTextField();
+		textMotor.setText("0");
+		textMotor.setFont(new Font("Arial", Font.PLAIN, 50));
 		textMotor.setBackground(Color.RED);
 		textMotor.setEditable(false);
 		textMotor.setColumns(10);
-		textMotor.setBounds(257, 588, 70, 70);
+		textMotor.setBounds(257, 588, 60, 70);
 		contentPane.add(textMotor);
 		
 		textDroneMontado = new JTextField();
+		textDroneMontado.setText("0");
+		textDroneMontado.setFont(new Font("Arial", Font.PLAIN, 50));
 		textDroneMontado.setBackground(Color.WHITE);
 		textDroneMontado.setEditable(false);
 		textDroneMontado.setColumns(10);
-		textDroneMontado.setBounds(492, 588, 70, 70);
+		textDroneMontado.setBounds(492, 588, 60, 70);
 		contentPane.add(textDroneMontado);
 		
 		JLabel lblProduzido = new JLabel("PRODUZIDO(S)");
@@ -178,24 +190,24 @@ public class LinhaProducaoWindow extends JFrame {
 		legendaOF.setBackground(Color.RED);
 		legendaOF.setEditable(false);
 		legendaOF.setColumns(10);
-		legendaOF.setBounds(755, 528, 70, 70);
+		legendaOF.setBounds(755, 528, 60, 70);
 		contentPane.add(legendaOF);
 		
 		legendaON = new JTextField();
 		legendaON.setBackground(Color.GREEN);
 		legendaON.setEditable(false);
 		legendaON.setColumns(10);
-		legendaON.setBounds(755, 454, 70, 70);
+		legendaON.setBounds(755, 454, 60, 70);
 		contentPane.add(legendaON);
 		
 		JLabel lblOff = new JLabel("PARADA - OFF");
 		lblOff.setFont(new Font("Arial", Font.PLAIN, 17));
-		lblOff.setBounds(837, 528, 157, 70);
+		lblOff.setBounds(827, 527, 157, 70);
 		contentPane.add(lblOff);
 		
 		JLabel lblOn = new JLabel("PRODUZINDO - ON");
 		lblOn.setFont(new Font("Arial", Font.PLAIN, 17));
-		lblOn.setBounds(837, 453, 172, 70);
+		lblOn.setBounds(827, 453, 172, 70);
 		contentPane.add(lblOn);
 		
 		JLabel label_5 = new JLabel("Frame");
@@ -204,10 +216,12 @@ public class LinhaProducaoWindow extends JFrame {
 		contentPane.add(label_5);
 		
 		textCaixa = new JTextField();
+		textCaixa.setText("0");
+		textCaixa.setFont(new Font("Arial", Font.PLAIN, 50));
 		textCaixa.setEditable(false);
 		textCaixa.setColumns(10);
 		textCaixa.setBackground(Color.WHITE);
-		textCaixa.setBounds(779, 248, 70, 70);
+		textCaixa.setBounds(779, 248, 60, 70);
 		contentPane.add(textCaixa);
 		
 		JLabel lblCaixasC = new JLabel("CAIXA(S) C/ 8");
@@ -221,10 +235,12 @@ public class LinhaProducaoWindow extends JFrame {
 		contentPane.add(lblLegenda);
 		
 		textDronesHora = new JTextField();
+		textDronesHora.setFont(new Font("Arial", Font.PLAIN, 40));
+		textDronesHora.setText("0,0");
 		textDronesHora.setEditable(false);
 		textDronesHora.setColumns(10);
 		textDronesHora.setBackground(Color.WHITE);
-		textDronesHora.setBounds(779, 329, 70, 70);
+		textDronesHora.setBounds(779, 329, 60, 70);
 		contentPane.add(textDronesHora);
 		
 		JLabel lblDroneshora = new JLabel("DRONES / HORA");
@@ -239,5 +255,79 @@ public class LinhaProducaoWindow extends JFrame {
 			linhaProducaoWindow = new LinhaProducaoWindow();
 		}
 		return linhaProducaoWindow;
+	}
+
+	public JTextField getTextHelice() {
+		return textHelice;
+	}
+
+	public void setTextHelice(JTextField textHelice) {
+		this.textHelice = textHelice;
+	}
+
+	public JTextField getTextBateria() {
+		return textBateria;
+	}
+
+	public void setTextBateria(JTextField textBateria) {
+		this.textBateria = textBateria;
+	}
+
+	public JTextField getTextFrame() {
+		return textFrame;
+	}
+
+	public void setTextFrame(JTextField textFrame) {
+		this.textFrame = textFrame;
+	}
+
+	public JTextField getTextPlacaControladora() {
+		return textPlacaControladora;
+	}
+
+	public void setTextPlacaControladora(JTextField textPlacaControladora) {
+		this.textPlacaControladora = textPlacaControladora;
+	}
+
+	public JTextField getTextMotor() {
+		return textMotor;
+	}
+
+	public void setTextMotor(JTextField textMotor) {
+		this.textMotor = textMotor;
+	}
+
+	public JTextField getTextDroneMontado() {
+		return textDroneMontado;
+	}
+
+	public void setTextDroneMontado(JTextField textDroneMontado) {
+		this.textDroneMontado = textDroneMontado;
+	}
+
+	public JTextField getTextCaixa() {
+		return textCaixa;
+	}
+
+	public void setTextCaixa(JTextField textCaixa) {
+		this.textCaixa = textCaixa;
+	}
+
+	public JTextField getTextDronesHora() {
+		return textDronesHora;
+	}
+
+	public void setTextDronesHora(JTextField textDronesHora) {
+		this.textDronesHora = textDronesHora;
+	}
+	
+	public JTextField getTextPorNome(String nome) {
+		if(nome == "Bateria") return textBateria;
+		if(nome == "Helice") return textHelice;
+		if(nome == "Frame") return textFrame;
+		if(nome == "Motor") return textMotor;
+		if(nome == "PlacaControladora") return textPlacaControladora;
+		
+		return null;
 	}
 }
