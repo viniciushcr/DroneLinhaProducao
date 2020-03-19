@@ -16,6 +16,7 @@ import java.awt.Window.Type;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
 
 public class LinhaProducaoWindow extends JFrame {
 
@@ -31,6 +32,7 @@ public class LinhaProducaoWindow extends JFrame {
 	private JTextField legendaON;
 	private JTextField textCaixa;
 	private JTextField textDronesHora;
+	private JLabel lblCaixaIcon;
 
 	/**
 	 * Launch the application.
@@ -183,36 +185,36 @@ public class LinhaProducaoWindow extends JFrame {
 				LinhaProducaoWindow.getLinhaProducaoWindow().setVisible(false);
 			}
 		});
-		btnVoltar.setBounds(807, 611, 157, 59);
+		btnVoltar.setBounds(796, 267, 157, 75);
 		contentPane.add(btnVoltar);
 		
 		legendaOF = new JTextField();
 		legendaOF.setBackground(Color.RED);
 		legendaOF.setEditable(false);
 		legendaOF.setColumns(10);
-		legendaOF.setBounds(755, 528, 60, 70);
+		legendaOF.setBounds(755, 101, 60, 70);
 		contentPane.add(legendaOF);
 		
 		legendaON = new JTextField();
 		legendaON.setBackground(Color.GREEN);
 		legendaON.setEditable(false);
 		legendaON.setColumns(10);
-		legendaON.setBounds(755, 454, 60, 70);
+		legendaON.setBounds(755, 26, 60, 70);
 		contentPane.add(legendaON);
 		
 		JLabel lblOff = new JLabel("PARADA - OFF");
 		lblOff.setFont(new Font("Arial", Font.PLAIN, 17));
-		lblOff.setBounds(827, 527, 157, 70);
+		lblOff.setBounds(827, 100, 157, 70);
 		contentPane.add(lblOff);
 		
 		JLabel lblOn = new JLabel("PRODUZINDO - ON");
 		lblOn.setFont(new Font("Arial", Font.PLAIN, 17));
-		lblOn.setBounds(827, 453, 172, 70);
+		lblOn.setBounds(827, 25, 172, 70);
 		contentPane.add(lblOn);
 		
 		JLabel label_5 = new JLabel("Frame");
 		label_5.setIcon(new ImageIcon(LinhaProducaoWindow.class.getResource("/images/caixa.png")));
-		label_5.setBounds(769, 10, 225, 225);
+		label_5.setBounds(796, 350, 225, 225);
 		contentPane.add(label_5);
 		
 		textCaixa = new JTextField();
@@ -221,32 +223,43 @@ public class LinhaProducaoWindow extends JFrame {
 		textCaixa.setEditable(false);
 		textCaixa.setColumns(10);
 		textCaixa.setBackground(Color.WHITE);
-		textCaixa.setBounds(779, 248, 60, 70);
+		textCaixa.setBounds(840, 588, 60, 70);
 		contentPane.add(textCaixa);
 		
 		JLabel lblCaixasC = new JLabel("CAIXA(S) C/ 8");
 		lblCaixasC.setFont(new Font("Arial", Font.PLAIN, 17));
-		lblCaixasC.setBounds(860, 248, 134, 70);
+		lblCaixasC.setBounds(912, 588, 109, 70);
 		contentPane.add(lblCaixasC);
 		
 		JLabel lblLegenda = new JLabel("LEGENDA - LINHA PRODU\u00C7\u00C3O:");
 		lblLegenda.setFont(new Font("Arial", Font.PLAIN, 17));
-		lblLegenda.setBounds(755, 412, 266, 52);
+		lblLegenda.setBounds(755, -11, 266, 52);
 		contentPane.add(lblLegenda);
 		
 		textDronesHora = new JTextField();
 		textDronesHora.setFont(new Font("Arial", Font.PLAIN, 40));
-		textDronesHora.setText("0,0");
+		textDronesHora.setText("000");
 		textDronesHora.setEditable(false);
 		textDronesHora.setColumns(10);
 		textDronesHora.setBackground(Color.WHITE);
-		textDronesHora.setBounds(779, 329, 60, 70);
+		textDronesHora.setBounds(795, 184, 73, 70);
 		contentPane.add(textDronesHora);
 		
 		JLabel lblDroneshora = new JLabel("DRONES / HORA");
 		lblDroneshora.setFont(new Font("Arial", Font.PLAIN, 17));
-		lblDroneshora.setBounds(860, 331, 134, 70);
+		lblDroneshora.setBounds(879, 183, 134, 70);
 		contentPane.add(lblDroneshora);
+		
+		this.lblCaixaIcon = new JLabel("New label");
+		lblCaixaIcon.setBackground(Color.GRAY);
+		lblCaixaIcon.setIcon(new ImageIcon(LinhaProducaoWindow.class.getResource("/images/caixaIcon.png")));
+		lblCaixaIcon.setBounds(700, 576, 40, 40);
+		contentPane.add(lblCaixaIcon);
+		
+		JLabel lblEsteira = new JLabel("New label");
+		lblEsteira.setIcon(new ImageIcon(LinhaProducaoWindow.class.getResource("/images/esteira.png")));
+		lblEsteira.setBounds(707, 615, 121, 40);
+		contentPane.add(lblEsteira);
 	}
 	
 	
@@ -320,6 +333,12 @@ public class LinhaProducaoWindow extends JFrame {
 	public void setTextDronesHora(JTextField textDronesHora) {
 		this.textDronesHora = textDronesHora;
 	}
+	
+	public JLabel getLblCaixaIcon() {
+		return this.lblCaixaIcon;
+	}
+	
+	
 	
 	public JTextField getTextPorNome(String nome) {
 		if(nome == "Bateria") return textBateria;

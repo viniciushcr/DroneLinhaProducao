@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class MenuWindow extends JFrame {
 
@@ -55,10 +56,12 @@ public class MenuWindow extends JFrame {
 		
 		JLabel lblNomeEmpresa = new JLabel("DRONE");
 		lblNomeEmpresa.setFont(new Font("Wide Latin", Font.BOLD, 60));
-		lblNomeEmpresa.setBounds(310, 13, 463, 250);
+		lblNomeEmpresa.setBounds(286, 0, 463, 250);
 		contentPane.add(lblNomeEmpresa);
 		
-		JButton btnStart = new JButton("START");
+		JButton btnStart = new JButton("");
+		btnStart.setBackground(Color.LIGHT_GRAY);
+		btnStart.setIcon(new ImageIcon(MenuWindow.class.getResource("/images/telaDados.png")));
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -68,7 +71,12 @@ public class MenuWindow extends JFrame {
 			}
 		});
 		btnStart.setFont(new Font("Arial", Font.PLAIN, 30));
-		btnStart.setBounds(310, 350, 197, 66);
+		btnStart.setBounds(316, 338, 199, 142);
 		contentPane.add(btnStart);
+		
+		JLabel lblDji = new JLabel("DJI");
+		lblDji.setFont(new Font("Wide Latin", Font.BOLD, 60));
+		lblDji.setBounds(577, 159, 227, 91);
+		contentPane.add(lblDji);
 	}
 }

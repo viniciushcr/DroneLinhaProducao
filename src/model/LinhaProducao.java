@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 import view.LinhaProducaoWindow;
@@ -22,11 +23,8 @@ public class LinhaProducao implements Runnable{
 	public void run() {
 		while (true) {
 			synchronized (this) {
-				try {
-					wait();  
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+				
+				LinhaProducaoWindow.getLinhaProducaoWindow().getTextPorNome(nomeParte).setBackground(Color.GREEN);
 				while (estoqueParteDrone.size() <= (tamanhoEstoque-1)) {
 					try {
 						Thread.sleep(tempoPruducao);
