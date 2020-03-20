@@ -66,7 +66,7 @@ public class LinhaProducaoWindow extends JFrame {
 		
 		JLabel lblHelice = new JLabel("Helice");
 		lblHelice.setIcon(new ImageIcon(LinhaProducaoWindow.class.getResource("/images/helice.png")));
-		lblHelice.setBounds(10, 10, 225, 225);
+		lblHelice.setBounds(10, 24, 225, 225);
 		contentPane.add(lblHelice);
 		
 		JLabel lblPlacaControladora = new JLabel("Placa Controladora");
@@ -76,12 +76,12 @@ public class LinhaProducaoWindow extends JFrame {
 		
 		JLabel lblFrames = new JLabel("Frame");
 		lblFrames.setIcon(new ImageIcon(LinhaProducaoWindow.class.getResource("/images/frame.png")));
-		lblFrames.setBounds(482, 10, 225, 225);
+		lblFrames.setBounds(482, 24, 225, 225);
 		contentPane.add(lblFrames);
 		
 		JLabel lblBateria = new JLabel("Bateria");
 		lblBateria.setIcon(new ImageIcon(LinhaProducaoWindow.class.getResource("/images/bateria.png")));
-		lblBateria.setBounds(245, 10, 225, 225);
+		lblBateria.setBounds(245, 24, 225, 225);
 		contentPane.add(lblBateria);
 		
 		JLabel lblMotor = new JLabel("Motor");
@@ -127,7 +127,7 @@ public class LinhaProducaoWindow extends JFrame {
 		textPlacaControladora.setBackground(Color.RED);
 		textPlacaControladora.setEditable(false);
 		textPlacaControladora.setColumns(10);
-		textPlacaControladora.setBounds(20, 588, 60, 70);
+		textPlacaControladora.setBounds(20, 577, 60, 70);
 		contentPane.add(textPlacaControladora);
 		
 		textMotor = new JTextField();
@@ -136,7 +136,7 @@ public class LinhaProducaoWindow extends JFrame {
 		textMotor.setBackground(Color.RED);
 		textMotor.setEditable(false);
 		textMotor.setColumns(10);
-		textMotor.setBounds(257, 588, 60, 70);
+		textMotor.setBounds(257, 577, 60, 70);
 		contentPane.add(textMotor);
 		
 		textDroneMontado = new JTextField();
@@ -145,7 +145,7 @@ public class LinhaProducaoWindow extends JFrame {
 		textDroneMontado.setBackground(Color.WHITE);
 		textDroneMontado.setEditable(false);
 		textDroneMontado.setColumns(10);
-		textDroneMontado.setBounds(492, 588, 60, 70);
+		textDroneMontado.setBounds(492, 577, 60, 70);
 		contentPane.add(textDroneMontado);
 		
 		JLabel lblProduzido = new JLabel("PRODUZIDO(S)");
@@ -165,17 +165,17 @@ public class LinhaProducaoWindow extends JFrame {
 		
 		JLabel label_2 = new JLabel("PRODUZIDO(S)");
 		label_2.setFont(new Font("Arial", Font.PLAIN, 17));
-		label_2.setBounds(101, 588, 134, 70);
+		label_2.setBounds(101, 577, 134, 70);
 		contentPane.add(label_2);
 		
 		JLabel label_3 = new JLabel("PRODUZIDO(S)");
 		label_3.setFont(new Font("Arial", Font.PLAIN, 17));
-		label_3.setBounds(336, 588, 134, 70);
+		label_3.setBounds(336, 577, 134, 70);
 		contentPane.add(label_3);
 		
 		JLabel label_4 = new JLabel("PRODUZIDO(S)");
 		label_4.setFont(new Font("Arial", Font.PLAIN, 17));
-		label_4.setBounds(573, 588, 134, 70);
+		label_4.setBounds(573, 577, 134, 70);
 		contentPane.add(label_4);
 		
 		JButton btnVoltar = new JButton("VOLTAR");
@@ -253,13 +253,43 @@ public class LinhaProducaoWindow extends JFrame {
 		this.lblCaixaIcon = new JLabel("New label");
 		lblCaixaIcon.setBackground(Color.GRAY);
 		lblCaixaIcon.setIcon(new ImageIcon(LinhaProducaoWindow.class.getResource("/images/caixaIcon.png")));
-		lblCaixaIcon.setBounds(700, 576, 40, 40);
+		lblCaixaIcon.setBounds(700, 578, 40, 40);
 		contentPane.add(lblCaixaIcon);
 		
 		JLabel lblEsteira = new JLabel("New label");
 		lblEsteira.setIcon(new ImageIcon(LinhaProducaoWindow.class.getResource("/images/esteira.png")));
 		lblEsteira.setBounds(707, 615, 121, 40);
 		contentPane.add(lblEsteira);
+		
+		JLabel lblP = new JLabel("LP PLACA CONTROLODORA");
+		lblP.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblP.setBounds(0, 323, 245, 24);
+		contentPane.add(lblP);
+		
+		JLabel lblLpMotor = new JLabel("LP MOTOR");
+		lblLpMotor.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblLpMotor.setBounds(299, 323, 157, 24);
+		contentPane.add(lblLpMotor);
+		
+		JLabel lblDrone = new JLabel("DRONE MONTADO");
+		lblDrone.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblDrone.setBounds(502, 323, 205, 24);
+		contentPane.add(lblDrone);
+		
+		JLabel lblLpHlice = new JLabel("LP HELICE");
+		lblLpHlice.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblLpHlice.setBounds(69, 2, 134, 24);
+		contentPane.add(lblLpHlice);
+		
+		JLabel lblLpBateria = new JLabel("LP BATERIA");
+		lblLpBateria.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblLpBateria.setBounds(294, 2, 142, 24);
+		contentPane.add(lblLpBateria);
+		
+		JLabel lblLpFrame = new JLabel("LP FRAME");
+		lblLpFrame.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblLpFrame.setBounds(540, 2, 134, 24);
+		contentPane.add(lblLpFrame);
 	}
 	
 	

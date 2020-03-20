@@ -23,9 +23,9 @@ public class LinhaProducao implements Runnable{
 	public void run() {
 		while (true) {
 			synchronized (this) {
-				
-				LinhaProducaoWindow.getLinhaProducaoWindow().getTextPorNome(nomeParte).setBackground(Color.GREEN);
+							
 				while (estoqueParteDrone.size() <= (tamanhoEstoque-1)) {
+					LinhaProducaoWindow.getLinhaProducaoWindow().getTextPorNome(nomeParte).setBackground(Color.GREEN);
 					try {
 						Thread.sleep(tempoPruducao);
 					} catch (InterruptedException e) {
@@ -35,6 +35,7 @@ public class LinhaProducao implements Runnable{
 					LinhaProducaoWindow.getLinhaProducaoWindow().getTextPorNome(nomeParte).setText(""+estoqueParteDrone.size());
 					System.out.println("Produziu -> "+estoqueParteDrone.size()+" " + nomeParte);
 				}
+				LinhaProducaoWindow.getLinhaProducaoWindow().getTextPorNome(nomeParte).setBackground(Color.RED);
 			}
 		}
 	}

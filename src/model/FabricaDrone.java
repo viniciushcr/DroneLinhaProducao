@@ -14,11 +14,11 @@ public class FabricaDrone extends Thread{
 	private ArrayList<ParteDrone> estoqueMotores;
 	private ArrayList<ParteDrone> estoqueFrames;
 	
-	private LinhaProducao linhaProducaoHelice;
-	private LinhaProducao linhaProducaoBateria;
-	private LinhaProducao linhaProducaoPlacaControladora;
-	private LinhaProducao linhaProducaoMotor;
-	private LinhaProducao linhaProducaoFrame;
+	private LPHelices linhaProducaoHelice;
+	private LPBaterias linhaProducaoBateria;
+	private LPPlacasControladoras linhaProducaoPlacaControladora;
+	private LPMotores linhaProducaoMotor;
+	private LPFrames linhaProducaoFrame;
 	
 	ArrayList<LinhaProducao> arrayLinhaProducao;
 	
@@ -31,11 +31,11 @@ public class FabricaDrone extends Thread{
 		this.estoqueMotores = new ArrayList<ParteDrone>();
 		this.estoqueFrames = new ArrayList<ParteDrone>();
 		
-		this.linhaProducaoHelice = new LinhaProducao("Helice", 80, this.estoqueHelices,2000);
-		this.linhaProducaoBateria = new LinhaProducao("Bateria", 20, this.estoqueBaterias,3000);
-		this.linhaProducaoPlacaControladora = new LinhaProducao("PlacaControladora", 8, this.estoquePlacasControladoras,7000);
-		this.linhaProducaoMotor = new LinhaProducao("Motor", 16, this.estoqueMotores,3000);
-		this.linhaProducaoFrame = new LinhaProducao("Frame", 10, this.estoqueFrames,9000);
+		this.linhaProducaoHelice = new LPHelices("Helice", 80, this.estoqueHelices,2000);
+		this.linhaProducaoBateria = new LPBaterias("Bateria", 20, this.estoqueBaterias,3000);
+		this.linhaProducaoPlacaControladora = new LPPlacasControladoras("PlacaControladora", 8, this.estoquePlacasControladoras,7000);
+		this.linhaProducaoMotor = new LPMotores("Motor", 16, this.estoqueMotores,3000);
+		this.linhaProducaoFrame = new LPFrames("Frame", 10, this.estoqueFrames,9000);
 		
 		arrayLinhaProducao = new ArrayList<LinhaProducao>(); 
 		arrayLinhaProducao.add(linhaProducaoHelice);
